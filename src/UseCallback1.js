@@ -26,11 +26,11 @@ export default function App() {
   const [type, setType] = useState(false);
   return (
     <div className="App">
-      <h1>useCallback example 1</h1>
+      <h1>Without useCallback</h1>
       <h2>Count is : {type}</h2>
       <Counter
         onChange={count => {
-          setType(count % 2 ? "even" : "odd");
+          setType(count % 2 ? "odd" : "even");
           console.log(`count is changed to ${count}`);
         }}
       />
