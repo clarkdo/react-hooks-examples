@@ -10,7 +10,7 @@ const calculateLettersCount = word => {
 function Counter() {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(0);
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState();
 
   console.log(
     `renering counter: input: ${input} count: ${count} time: ${time.getTime()} !`
@@ -33,7 +33,7 @@ function Counter() {
       </button>
       <h2>Word: {input}</h2>
       <h2>Letters: {count}</h2>
-      <h2>Update Time: {time.toISOString()}</h2>
+      <h2>Time: {time && time.toISOString()}</h2>
     </div>
   );
 }

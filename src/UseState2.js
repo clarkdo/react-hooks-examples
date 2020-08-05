@@ -8,7 +8,7 @@ const calculateLettersCount = word => {
 };
 
 function Counter() {
-  const [input, setInput] = useState({ value: "", count: 0, time: new Date() });
+  const [input, setInput] = useState({ value: "", count: 0, time: null });
   const { value, count, time } = input;
 
   console.log(
@@ -16,7 +16,7 @@ function Counter() {
   );
 
   return (
-    <div className="App">
+    <div>
       <input type="text" id="word" />{" "}
       <button
         onClick={() => {
@@ -34,7 +34,7 @@ function Counter() {
       </button>
       <h2>Word: {value}</h2>
       <h2>Letters: {count}</h2>
-      <h2>Update Time: {time.toISOString()}</h2>
+      <h2>Time: {time && time.toISOString()}</h2>
     </div>
   );
 }

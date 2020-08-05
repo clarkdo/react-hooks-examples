@@ -11,11 +11,11 @@ import UseState2 from "./UseState2";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <>
-    {/* <UseCallback1 />
-    <UseCallback2 />
-    <UseMemo1 />
-    <UseMemo2 /> */}
-    <UseState1 />
+    {/* <UseCallback1 /> */}
+    {/* <UseCallback2 /> */}
+    {/* <UseMemo1 /> */}
+    <UseMemo2 />
+    {/* <UseState1 /> */}
     {/* <UseState2 /> */}
   </>,
   rootElement

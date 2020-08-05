@@ -9,7 +9,7 @@ function Counter({ onChange }) {
   }, [count, onChange]);
 
   return (
-    <div className="App">
+    <div>
       <h2>Count: {count}</h2>
       <button
         onClick={() => {
