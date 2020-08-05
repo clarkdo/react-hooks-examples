@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const calculateLettersCount = word => {
-  if (!word) {
-    return 0;
-  }
   console.log(`expensive calculation: ${word}!`);
   return word ? word.length : 0;
 };
@@ -28,7 +25,7 @@ function Counter() {
         Get number
       </button>
       <h2>Word: {input.value}</h2>
-      <h2>Number of letters: {count}</h2>
+      <h2>Letters: {count}</h2>
       <h2>Update Time: {input.time.toISOString()}</h2>
     </div>
   );
