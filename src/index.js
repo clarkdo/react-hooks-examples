@@ -20,7 +20,7 @@ ReactDOM.render(
     {/* <UseState1 /> */}
     {/* <UseState2 /> */}
     {/* <UseRef1 /> */}
-    <UseRef2 />
+    {/* <UseRef2 /> */}
   </>,
   rootElement
 );
