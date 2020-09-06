@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import "./styles.css";
 
 function Counter({ onChange }) {
   const [count, setCount] = useState(1);
@@ -25,7 +24,7 @@ function Counter({ onChange }) {
 export default function App() {
   const [type, setType] = useState(false);
 
-  const onChange = useCallback(count => {
+  const onChange = useCallback((count) => {
     setType(count % 2 ? "odd" : "even");
     console.log(`count is changed to ${count}`);
   }, []);

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./styles.css";
 
 const calculateLettersCount = (word) => {
   return new Promise((resolve) => {

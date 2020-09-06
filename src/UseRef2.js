@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./styles.css";
 
-const usePrevious = value => {
+const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
     ref.current = value;

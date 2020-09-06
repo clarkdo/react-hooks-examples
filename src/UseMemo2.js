@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
-import "./styles.css";
 
-const calculateLettersCount = word => {
+const calculateLettersCount = (word) => {
   console.log(`expensive calculation: ${word}!`);
   return word ? word.length : 0;
 };
