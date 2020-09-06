@@ -18,7 +18,7 @@ ReactDOM.render(
     {/* <UseMemo1 /> */}
     {/* <UseMemo2 /> */}
     {/* <UseState1 /> */}
-    {/* <UseState2 /> */}
+    <UseState2 />
     {/* <UseRef1 /> */}
     {/* <UseRef2 /> */}
   </>,

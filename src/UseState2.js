@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const calculateLettersCount = word => {
-  return new Promise(resolve => {
+const calculateLettersCount = (word) => {
+  return new Promise((resolve) => {
     resolve(word ? word.length : 0);
   });
 };
@@ -12,7 +12,7 @@ function Counter() {
   const { value, count, time } = input;
 
   console.log(
-    `renering counter: input: ${value} count: ${count} time: ${time.getTime()} !`
+    `renering counter: input: ${value} count: ${count} time: ${time} !`
   );
 
   return (
@@ -21,7 +21,7 @@ function Counter() {
       <button
         onClick={() => {
           const value = document.getElementById("word").value;
-          calculateLettersCount(value).then(count => {
+          calculateLettersCount(value).then((count) => {
             setInput({
               value,
               count,
