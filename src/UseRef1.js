@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Button from "./components/Button";
 import Output from "./components/Output";
+import Title from "./components/Title";
 
 function Counter() {
   const [clickCount, setClickCount] = useState(1);
@@ -28,7 +29,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>Get the number of clicks and async requests</h1>
+      <Title>Get the number of clicks and async requests</Title>
       <Counter />
     </div>
   );

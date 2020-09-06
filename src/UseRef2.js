@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Button from "./components/Button";
 import Output from "./components/Output";
+import Title from "./components/Title";
 
 const usePrevious = (value) => {
   const ref = useRef();
@@ -37,7 +38,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>Get the number of clicks and async requests</h1>
+      <Title>Get the number of clicks and async requests</Title>
       <Counter />
     </div>
   );

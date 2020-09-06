@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import Output from "./components/Output";
+import Title from "./components/Title";
 
 const calculateLettersCount = (word) => {
   console.log(`expensive calculation: ${word}!`);
@@ -38,7 +39,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>Get the number of letters in a word</h1>
+      <Title>Get the number of letters in a word</Title>
       <Counter />
     </div>
   );
