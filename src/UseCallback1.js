@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
+
+import Button from "./components/Button";
+import Output from "./components/Output";
 
 function Counter({ onChange }) {
   const [count, setCount] = useState(1);
@@ -10,14 +12,14 @@ function Counter({ onChange }) {
 
   return (
     <div>
-      <h2>Count: {count}</h2>
-      <button
+      <Output>Count: {count}</Output>
+      <Button
         onClick={() => {
           setCount(count + 1);
         }}
       >
         Increment
-      </button>
+      </Button>
     </div>
   );
 }
@@ -26,10 +28,9 @@ export default function App() {
   const [type, setType] = useState(false);
   return (
     <div className="App">
-      <h1>Without useCallback</h1>
-      <h2>Count is : {type}</h2>
+      <Output>Count is : {type}</Output>
       <Counter
-        onChange={count => {
+        onChange={(count) => {
           setType(count % 2 ? "odd" : "even");
           console.log(`count is changed to ${count}`);
         }}

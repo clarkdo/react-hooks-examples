@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./styles.css";
 
 import UseCallback1 from "./UseCallback1";
 import UseCallback2 from "./UseCallback2";
@@ -9,18 +11,26 @@ import UseState1 from "./UseState1";
 import UseState2 from "./UseState2";
 import UseRef1 from "./UseRef1";
 import UseRef2 from "./UseRef2";
+import Navigation from "./components/Navigation";
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <>
-    {/* <UseCallback1 /> */}
-    {/* <UseCallback2 /> */}
-    {/* <UseMemo1 /> */}
-    {/* <UseMemo2 /> */}
-    {/* <UseState1 /> */}
-    <UseState2 />
-    {/* <UseRef1 /> */}
-    {/* <UseRef2 /> */}
-  </>,
-  rootElement
-);
+
+const App = (props) => {
+  return (
+    <BrowserRouter>
+      <Navigation />
+      <Switch location={props.location}>
+        <Route exact path="/callback1" component={UseCallback1} />
+        <Route exact path="/callback2" component={UseCallback2} />
+        <Route exact path="/memo1" component={UseMemo1} />
+        <Route exact path="/memo2" component={UseMemo2} />
+        <Route exact path="/state1" component={UseState1} />
+        <Route exact path="/state2" component={UseState2} />
+        <Route exact path="/ref1" component={UseRef1} />
+        <Route exact path="/ref2" component={UseRef2} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
+
+ReactDOM.render(<App />, rootElement);
