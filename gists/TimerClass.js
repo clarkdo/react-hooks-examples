@@ -9,8 +9,8 @@ class Timer extends React.Component {
     this.interval = setInterval(this.tick, 1000);
   }
 
-  componentWillUmount() {
-    this.interval = setInterval(this.tick, 1000);
+  componentWillUnmount() {
+    clearInterval(this.tick, 1000);
   }
 
   tick() {
