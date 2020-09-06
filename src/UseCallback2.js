@@ -1,5 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 
+import Button from "./components/Button";
+import Output from "./components/Output";
+
 function Counter({ onChange }) {
   const [count, setCount] = useState(1);
 
@@ -9,14 +12,14 @@ function Counter({ onChange }) {
 
   return (
     <div>
-      <h2>Count: {count}</h2>
-      <button
+      <Output>Count: {count}</Output>
+      <Button
         onClick={() => {
           setCount(count + 1);
         }}
       >
         Increment
-      </button>
+      </Button>
     </div>
   );
 }
@@ -31,8 +34,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>With useCallback</h1>
-      <h2>Count is : {type}</h2>
+      <h1>Get the number of clicks</h1>
+      <Output>Count is : {type}</Output>
       <Counter onChange={onChange} />
     </div>
   );

@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Output from "./components/Output";
 
 const calculateLettersCount = (word) => {
   return new Promise((resolve) => {
@@ -9,30 +13,28 @@ const calculateLettersCount = (word) => {
 function Counter() {
   const [input, setInput] = useState("");
   const [count, setCount] = useState(0);
-  const [time, setTime] = useState();
+  const renderTimes = useRef(0);
 
-  console.log(
-    `renering counter: input: ${input} count: ${count} time: ${time} !`
-  );
+  renderTimes.current = renderTimes.current + 1;
+  console.log(`renering counter: input: ${input} count: ${count}  !`);
 
   return (
     <div>
-      <input type="text" id="word" />{" "}
-      <button
+      <Output>Word: {input}</Output>
+      <Output>Letters: {count}</Output>
+      <Output>Renderings: {renderTimes.current}</Output>
+      <Input type="text" id="word" />
+      <Button
         onClick={() => {
           const value = document.getElementById("word").value;
           calculateLettersCount(value).then((count) => {
             setInput(value);
             setCount(count);
-            setTime(new Date());
           });
         }}
       >
         Get number
-      </button>
-      <h2>Word: {input}</h2>
-      <h2>Letters: {count}</h2>
-      <h2>Time: {time && time.toISOString()}</h2>
+      </Button>
     </div>
   );
 }
@@ -40,7 +42,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>Without merging state</h1>
+      <h1>Get the number of letters in a word</h1>
       <Counter />
     </div>
   );

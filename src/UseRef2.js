@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import Button from "./components/Button";
+import Output from "./components/Output";
+
 const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
@@ -9,21 +12,24 @@ const usePrevious = (value) => {
 };
 
 function Counter() {
-  const [count, setCount] = useState(1);
-  const prevCountRef = usePrevious(count);
+  const [clickCount, setClickCount] = useState(1);
+  const [requestCount, setRequestCount] = useState(1);
+  const prevRequestCountRef = usePrevious(requestCount);
 
   return (
     <div>
-      <h2>You clicked {count} times</h2>
-      <button
+      <Output>You clicked {clickCount} times</Output>
+      <Output>You requested {requestCount} times</Output>
+      <Button
         onClick={() => {
+          setClickCount(clickCount + 1);
           setTimeout(() => {
-            setCount(prevCountRef.current + 1);
+            setRequestCount(prevRequestCountRef.current + 1);
           }, 1000);
         }}
       >
         Increment
-      </button>
+      </Button>
     </div>
   );
 }
@@ -31,7 +37,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>Without useRef</h1>
+      <h1>Get the number of clicks and async requests</h1>
       <Counter />
     </div>
   );

@@ -1,5 +1,9 @@
 import React, { useMemo, useState } from "react";
 
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Output from "./components/Output";
+
 const calculateLettersCount = (word) => {
   console.log(`expensive calculation: ${word}!`);
   return word ? word.length : 0;
@@ -14,8 +18,11 @@ function Counter() {
 
   return (
     <div>
-      <input type="text" id="word" />{" "}
-      <button
+      <Output>Word: {value}</Output>
+      <Output>Letters: {count}</Output>
+      <Output>Time: {time && time.toISOString()}</Output>
+      <Input type="text" id="word" />
+      <Button
         onClick={() => {
           const newInput = {
             value: document.getElementById("word").value,
@@ -25,10 +32,7 @@ function Counter() {
         }}
       >
         Get number
-      </button>
-      <h2>Word: {value}</h2>
-      <h2>Letters: {count}</h2>
-      <h2>Time: {time && time.toISOString()}</h2>
+      </Button>
     </div>
   );
 }
@@ -36,7 +40,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <h1>With useMemo</h1>
+      <h1>Get the number of letters in a word</h1>
       <Counter />
     </div>
   );
