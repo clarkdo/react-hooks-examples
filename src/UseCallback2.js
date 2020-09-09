@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Title>Get the number of clicks</Title>
+      <Title>Get the number of clicks II</Title>
       <Output>Count is : {type}</Output>
       <Counter onChange={onChange} />
     </div>

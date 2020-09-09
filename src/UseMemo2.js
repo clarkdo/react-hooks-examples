@@ -41,7 +41,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <Title>Get the number of letters in a word</Title>
+      <Title>Get the number of letters in a word II</Title>
       <Counter />
     </div>
   );

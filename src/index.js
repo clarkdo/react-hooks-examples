@@ -23,7 +23,7 @@ const App = (props) => {
       <Switch location={props.location}>
         <Route
           exact
-          path="/callback1"
+          path="/(callback1)?"
           render={() => (
             <>
               <UseCallback1 />

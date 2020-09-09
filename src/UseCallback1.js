@@ -29,7 +29,7 @@ export default function App() {
   const [type, setType] = useState(false);
   return (
     <div className="App">
-      <Title>Get the number of clicks</Title>
+      <Title>Get the number of clicks I</Title>
       <Output>Count is : {type}</Output>
       <Counter
         onChange={(count) => {
