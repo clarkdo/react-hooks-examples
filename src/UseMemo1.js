@@ -15,7 +15,7 @@ function Counter() {
   // Times of clicking on refresh button
   const [refreshTimes, setRefreshTimes] = useState(0);
   const pathname = window.location.pathname;
-  // Expersive calculation
+  // Expensive calculation
   const reversedPathname = expensiveReverseString(pathname);
 
   return (

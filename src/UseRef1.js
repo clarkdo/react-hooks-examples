@@ -7,7 +7,7 @@ import Title from "./components/Title";
 function Counter() {
   // Times of clicking on Increment button
   const [clickCount, setClickCount] = useState(1);
-  // Times of ansync requests
+  // Times of async requests
   const [requestCount, setRequestCount] = useState(1);
 
   return (
