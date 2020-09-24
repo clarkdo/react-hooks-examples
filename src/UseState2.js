@@ -6,33 +6,33 @@ import Output from "./components/Output";
 import RendereringTimes from "./components/RendereringTimes";
 import Title from "./components/Title";
 
-const calculateLettersCount = (word) => {
+// Mock async calculation
+const calculateTextLength = (text) => {
   return new Promise((resolve) => {
-    resolve(word ? word.length : 0);
+    resolve(text ? text.length : 0);
   });
 };
 
 function Counter() {
-  const [input, setInput] = useState({ value: "", count: 0 });
-  const { value, count } = input;
-
-  console.log(`renering counter: input: ${value} count: ${count}  !`);
+  // Input text value and length
+  const [input, setInput] = useState({ value: "", length: 0 });
+  const { value, length } = input;
 
   return (
     <div>
-      <Output>Word: {value}</Output>
-      <Output>Letters: {count}</Output>
+      <Output>Text: {value}</Output>
+      <Output>Text length: {length}</Output>
       <RendereringTimes />
-      <Input type="text" id="word" />
+      <Input type="text" id="text" />
       <Button
         onClick={() => {
-          const value = document.getElementById("word").value;
-          calculateLettersCount(value).then((count) => {
-            setInput({ value, count });
+          const value = document.getElementById("text").value;
+          calculateTextLength(value).then((newLength) => {
+            setInput({ value, length: newLength });
           });
         }}
       >
-        Get number
+        Get length
       </Button>
     </div>
   );
@@ -41,7 +41,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <Title>Get the number of letters in a word II</Title>
+      <Title>Get text length II</Title>
       <Counter />
     </div>
   );

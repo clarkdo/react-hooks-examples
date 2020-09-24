@@ -5,7 +5,9 @@ import Output from "./components/Output";
 import Title from "./components/Title";
 
 function Counter() {
+  // Times of clicking on Increment button
   const [clickCount, setClickCount] = useState(1);
+  // Times of ansync requests
   const [requestCount, setRequestCount] = useState(1);
 
   return (
@@ -15,6 +17,7 @@ function Counter() {
       <Button
         onClick={() => {
           setClickCount(clickCount + 1);
+          // Mock async request
           setTimeout(() => {
             setRequestCount(requestCount + 1);
           }, 1000);

@@ -4,6 +4,7 @@ import Button from "./components/Button";
 import Output from "./components/Output";
 import Title from "./components/Title";
 
+// Hook using useRef to always get latest state value
 const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
@@ -13,9 +14,12 @@ const usePrevious = (value) => {
 };
 
 function Counter() {
+  // Times of clicking on Increment button
   const [clickCount, setClickCount] = useState(1);
+  // Times of ansync requests
   const [requestCount, setRequestCount] = useState(1);
-  const prevRequestCountRef = usePrevious(requestCount);
+  // Latest request count value
+  const prevRequestCount = usePrevious(requestCount);
 
   return (
     <div>
@@ -25,7 +29,7 @@ function Counter() {
         onClick={() => {
           setClickCount(clickCount + 1);
           setTimeout(() => {
-            setRequestCount(prevRequestCountRef.current + 1);
+            setRequestCount(prevRequestCount.current + 1);
           }, 1000);
         }}
       >
