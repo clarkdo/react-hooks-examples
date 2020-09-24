@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link as RouteLink, useLocation } from "react-router-dom";
+import React from "react";
+import { Link as RouteLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -42,27 +42,29 @@ const Link = styled(RouteLink)`
 `;
 
 const Navigation = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.console.clear();
-  }, [location]);
-
   return (
     <Nav>
       <Logo>React Hook Examples</Logo>
       <Menu>
         <Item>
-          <Link to="/callback1">useCallback</Link>
+          <Link to="/callback1" onClick={window.console.clear}>
+            useMemo
+          </Link>
         </Item>
         <Item>
-          <Link to="/memo1">useMemo</Link>
+          <Link to="/memo1" onClick={window.console.clear}>
+            useMemo
+          </Link>
         </Item>
         <Item>
-          <Link to="/ref1">useRef</Link>
+          <Link to="/ref1" onClick={window.console.clear}>
+            useRef
+          </Link>
         </Item>
         <Item>
-          <Link to="/state1">useState</Link>
+          <Link to="/state1" onClick={window.console.clear}>
+            useState
+          </Link>
         </Item>
       </Menu>
     </Nav>

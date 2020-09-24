@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./styles.css";
 
+import UseCallback1 from "./UseCallback1";
+import UseCallback2 from "./UseCallback2";
 import UseMemo1 from "./UseMemo1";
 import UseMemo2 from "./UseMemo2";
 import UseState1 from "./UseState1";
@@ -19,6 +21,18 @@ const App = (props) => {
     <BrowserRouter>
       <Navigation />
       <Switch location={props.location}>
+        {" "}
+        <Route
+          exact
+          path="/callback1"
+          render={() => (
+            <>
+              <UseCallback1 />
+              <NextExmaple to="/callback2" />
+            </>
+          )}
+        />
+        <Route exact path="/callback2" component={UseCallback2} />
         <Route
           exact
           path="/memo1"
