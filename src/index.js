@@ -10,7 +10,7 @@ import UseState2 from "./UseState2";
 import UseRef1 from "./UseRef1";
 import UseRef2 from "./UseRef2";
 import Navigation from "./components/Navigation";
-import NextExmaple from "./components/NextExmaple";
+import NextExample from "./components/NextExample";
 
 const rootElement = document.getElementById("root");
 
@@ -25,7 +25,7 @@ const App = (props) => {
           render={() => (
             <>
               <UseMemo1 />
-              <NextExmaple to="/memo2" />
+              <NextExample to="/memo2" />
             </>
           )}
         />
@@ -36,7 +36,7 @@ const App = (props) => {
           render={() => (
             <>
               <UseState1 />
-              <NextExmaple to="/state2" />
+              <NextExample to="/state2" />
             </>
           )}
         />
@@ -47,7 +47,7 @@ const App = (props) => {
           render={() => (
             <>
               <UseRef1 />
-              <NextExmaple to="/ref2" />
+              <NextExample to="/ref2" />
             </>
           )}
         />
