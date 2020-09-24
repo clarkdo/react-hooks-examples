@@ -53,9 +53,6 @@ const Navigation = () => {
       <Logo>React Hook Examples</Logo>
       <Menu>
         <Item>
-          <Link to="/callback1">useCallback</Link>
-        </Item>
-        <Item>
           <Link to="/memo1">useMemo</Link>
         </Item>
         <Item>
