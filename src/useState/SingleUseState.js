@@ -29,6 +29,7 @@ function Counter() {
         onClick={() => {
           const value = document.getElementById("text").value;
           calculateTextLength(value).then((newLength) => {
+            // setState in async will cause multiple re-renderings
             // 1st re-rendering
             setInput(value);
             // 2nd re-rendering
