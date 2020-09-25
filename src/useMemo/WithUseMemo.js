@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
-import Button from "./components/Button";
-import Output from "./components/Output";
-import Title from "./components/Title";
+import Button from "../components/Button";
+import Output from "../components/Output";
+import Title from "../components/Title";
 
 // Mock an expensive calculation method
 const expensiveReverseString = (str) => {
@@ -15,8 +15,10 @@ function Counter() {
   // Times of clicking on refresh button
   const [refreshTimes, setRefreshTimes] = useState(0);
   const pathname = window.location.pathname;
-  // Expensive calculation
-  const reversedPathname = expensiveReverseString(pathname);
+  // Add useMemo to avoiding duplicate calculation on same pathname
+  const reversedPathname = useMemo(() => expensiveReverseString(pathname), [
+    pathname
+  ]);
 
   return (
     <div>
@@ -37,7 +39,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <Title>Get the reversed pathname I</Title>
+      <Title>Get the reversed pathname II</Title>
       <Counter />
     </div>
   );

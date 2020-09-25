@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./styles.css";
 
-import UseMemo1 from "./UseMemo1";
-import UseMemo2 from "./UseMemo2";
-import UseState1 from "./UseState1";
-import UseState2 from "./UseState2";
-import UseRef1 from "./UseRef1";
-import UseRef2 from "./UseRef2";
+import WithoutUseMemo from "./useMemo/WithoutUseMemo";
+import WithUseMemo from "./useMemo/WithUseMemo";
+import SingleState from "./useState/SingleUseState";
+import MergedUseState from "./useState/MergedUseState";
+import WithoutUseRef from "./useRef/WithoutUseRef";
+import WithUseRef from "./useRef/WithUseRef";
 import Navigation from "./components/Navigation";
 import NextExample from "./components/NextExample";
 
@@ -21,37 +21,37 @@ const App = (props) => {
       <Switch location={props.location}>
         <Route
           exact
-          path="/memo1"
+          path="/withoutUseMemo"
           render={() => (
             <>
-              <UseMemo1 />
-              <NextExample to="/memo2" />
+              <WithoutUseMemo />
+              <NextExample to="/withUseMemo" />
             </>
           )}
         />
-        <Route exact path="/memo2" component={UseMemo2} />
+        <Route exact path="/withUseMemo" component={WithUseMemo} />
         <Route
           exact
-          path="/state1"
+          path="/singleUseState"
           render={() => (
             <>
-              <UseState1 />
-              <NextExample to="/state2" />
+              <SingleState />
+              <NextExample to="/mergedUseState" />
             </>
           )}
         />
-        <Route exact path="/state2" component={UseState2} />
+        <Route exact path="/mergedUseState" component={MergedUseState} />
         <Route
           exact
-          path="/ref1"
+          path="/withoutUseRef"
           render={() => (
             <>
-              <UseRef1 />
-              <NextExample to="/ref2" />
+              <WithoutUseRef />
+              <NextExample to="/withUseRef" />
             </>
           )}
         />
-        <Route exact path="/ref2" component={UseRef2} />
+        <Route exact path="/withUseRef" component={WithUseRef} />
       </Switch>
     </BrowserRouter>
   );
