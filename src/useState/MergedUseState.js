@@ -14,7 +14,7 @@ const calculateTextLength = (text) => {
 };
 
 function Counter() {
-  // Input text value and length
+  // Merge input text value and length
   const [input, setInput] = useState({ value: "", length: 0 });
   const { value, length } = input;
 
@@ -28,6 +28,7 @@ function Counter() {
         onClick={() => {
           const value = document.getElementById("text").value;
           calculateTextLength(value).then((newLength) => {
+            // Only re-render once
             setInput({ value, length: newLength });
           });
         }}

@@ -37,7 +37,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <Title>Get the reversed pathname I</Title>
+      <Title>Reverse pathname without useMemo</Title>
       <Counter />
     </div>
   );

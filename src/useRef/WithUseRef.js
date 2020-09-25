@@ -42,7 +42,7 @@ function Counter() {
 export default function App() {
   return (
     <div className="App">
-      <Title>Get the number of clicks and async requests II</Title>
+      <Title>Count clicks and requests with useRef</Title>
       <Counter />
     </div>
   );
