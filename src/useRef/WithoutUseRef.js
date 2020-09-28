@@ -23,7 +23,7 @@ function Counter() {
           }, 1000);
         }}
       >
-        Increment
+        Click me
       </Button>
     </div>
   );

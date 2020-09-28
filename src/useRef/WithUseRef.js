@@ -6,6 +6,8 @@ import Title from "../components/Title";
 
 // Hook using useRef to always get latest state value
 const usePrevious = (value) => {
+  // Basically similar to:
+  // const [ref] = useState({ current: undefined });
   const ref = useRef();
   useEffect(() => {
     ref.current = value;
@@ -33,7 +35,7 @@ function Counter() {
           }, 1000);
         }}
       >
-        Increment
+        Click me
       </Button>
     </div>
   );

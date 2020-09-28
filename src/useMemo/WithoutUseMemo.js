@@ -11,7 +11,7 @@ const expensiveReverseString = (str) => {
   return str ? str.split("").reverse().join("") : "";
 };
 
-function Counter() {
+function Pathname() {
   // Times of clicking on refresh button
   const [refreshTimes, setRefreshTimes] = useState(0);
   const pathname = window.location.pathname;
@@ -38,7 +38,7 @@ export default function App() {
   return (
     <div className="App">
       <Title>Reverse pathname without useMemo</Title>
-      <Counter />
+      <Pathname />
     </div>
   );
 }
