@@ -47,17 +47,17 @@ const Navigation = () => {
       <Logo>React Hook Examples</Logo>
       <Menu>
         <Item>
-          <Link onClick={window.console.clear} to="/memo1">
+          <Link onClick={window.console.clear} to="/withoutUseMemo">
             useMemo
           </Link>
         </Item>
         <Item>
-          <Link onClick={window.console.clear} to="/ref1">
+          <Link onClick={window.console.clear} to="/withoutUseRef">
             useRef
           </Link>
         </Item>
         <Item>
-          <Link onClick={window.console.clear} to="/state1">
+          <Link onClick={window.console.clear} to="/singleUseState">
             useState
           </Link>
         </Item>

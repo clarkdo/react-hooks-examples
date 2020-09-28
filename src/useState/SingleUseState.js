@@ -21,8 +21,9 @@ function Counter() {
 
   return (
     <div>
-      <Output>Text: {input}</Output>
-      <Output>Text length: {length}</Output>
+      <Output>
+        Text: {input} , length: {length}
+      </Output>
       <RenderingTimes />
       <Input type="text" id="text" />
       <Button
