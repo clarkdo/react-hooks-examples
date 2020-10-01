@@ -24,10 +24,6 @@ const Menu = styled.ul`
   li:nth-child(even) {
     margin: 0px 20px;
   }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Item = styled.li``;
