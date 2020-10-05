@@ -16,10 +16,10 @@ const usePrevious = (value) => {
 };
 
 function Counter() {
-  // Times of clicking on Increment button
-  const [clickCount, setClickCount] = useState(1);
+  // Times of clicking on button
+  const [clickCount, setClickCount] = useState(0);
   // Times of async requests
-  const [requestCount, setRequestCount] = useState(1);
+  const [requestCount, setRequestCount] = useState(0);
   // Latest request count value
   const prevRequestCount = usePrevious(requestCount);
 
