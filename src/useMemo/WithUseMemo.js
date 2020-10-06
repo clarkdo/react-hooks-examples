@@ -12,10 +12,10 @@ const expensiveReverseString = (str) => {
 };
 
 function Pathname() {
-  // Times of clicking on refresh button
-  const [refreshTimes, setRefreshTimes] = useState(0);
+  // Times of Pathname rendered
+  const [renderTimes, setRenderTimes] = useState(1);
   const pathname = window.location.pathname;
-  // Add useMemo to avoiding duplicate calculation on same pathname
+  // Add useMemo to avoid duplicate calculation on same pathname
   const reversedPathname = useMemo(() => {
     return expensiveReverseString(pathname);
   }, [pathname]);
@@ -24,13 +24,13 @@ function Pathname() {
     <div>
       <Output>Pathname: {pathname}</Output>
       <Output>Reversed: {reversedPathname}</Output>
-      <Output>Refreshed times: {refreshTimes}</Output>
+      <Output>Rendering times: {renderTimes}</Output>
       <Button
         onClick={() => {
-          setRefreshTimes(refreshTimes + 1);
+          setRenderTimes(renderTimes + 1);
         }}
       >
-        Refresh
+        Re-render
       </Button>
     </div>
   );
